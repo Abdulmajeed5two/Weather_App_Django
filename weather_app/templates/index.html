@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main>
+      <!-- Search bar and city name -->
+      <section class="container">
+        <div class="row">
+          <!-- Search form -->
+          <form method="post" class="col" id="search-form">
+            {% csrf_token %}
+            <input
+              type="search"
+              id="search-input"
+              name="location"
+              aria-describedby="searchCity"
+              placeholder="Search city or country..."
+              class="search-form"
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </form>
+          <!-- City name -->
+          <h1 class="col d-flex justify-content-center align-items-center city-title" id="searched-city">
+            {% if weather %}
+              {{ weather.city }}
+            {% else %}
+              City
+            {% endif %}
+          </h1>
+        </div>
+        <!-- Measurements -->
+        <div class="measurements">
+          <a href="#" id="celsius-link">C°</a> |
+          <a href="#" id="fahrenheit-link">F°</a>
+        </div>
+      </section>
+
+      <!-- Temp and day info -->
+      <section class="current-weather">
+        <div class="container">
+          <div class="row">
+            <!-- Current temperature -->
+            <h1 class="col temp-title" id="current-temperature">
+              {% if weather %}
+                {{ weather.temperature }}°
+              {% else %}
+                -10°
+              {% endif %}
+            </h1>
+            <!-- Today's info -->
+            <div class="col todays-info">
+              <p id="current-time">{{ current_time }}</p>
+              <h2 id="current-day">{{ current_day }}</h2>
+              <p id="weather-type">
+                {% if weather %}
+                  {{ weather.description }}
+                {% else %}
+                  Cloudy
+                {% endif %}
+              </p>
+            </div>
+            <!-- Side info -->
+            <div class="col side-info">
+              <ul>
+                <li>Humidity:
+                  <span id="humidity">
+                    {% if weather %}
+                      {{ weather.humidity }}%
+                    {% else %}
+                      --
+                    {% endif %}
+                  </span>
+                </li>
+                <li>Wind:
+                  <span id="wind">
+                    {% if weather %}
+                      {{ weather.wind }} km/h
+                    {% else %}
+                      --
+                    {% endif %}
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </section>
+
+      <!-- Forecast -->
+      <section class="container">
+        <!-- Centered forecast container -->
+        <div class="row justify-content-center">
+            <div id="ww_e7a6d1480c741" v='1.3' loc='id' a='{"t":"ticker","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>More forecasts: <a href="https://oneweather.org/london/30_days/" id="ww_e7a6d1480c741_u" target="_blank">London 30 day forecast</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_e7a6d1480c741"></script>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>
+          Designed by
+          <a href="https://github.com/Abdulmajeed5two" target="_blank">Warrior</a>
+        </p>
+      </footer>
+    </main>
+{% endblock %}

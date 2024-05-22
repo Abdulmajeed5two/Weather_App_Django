@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Oxygen+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS styles -->
+    <style>
+      body {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: rgb(114, 107, 107);
+        color: #3d3e3f;
+      }
+
+      main {
+        margin-top: 30px;
+      }
+
+      hr {
+        max-width: 800px;
+        margin: 48px;
+        border: 1px solid #4c4f5a;
+      }
+
+      .search-form {
+        margin: 20px 25px;
+        padding: 5px 10px;
+        width: 300px;
+        border-radius: 5px;
+        border: 2px solid #443c2d;
+        font-family: "Oxygen Mono", monospace;
+        font-size: 12px;
+      }
+
+      button {
+        display: inline-block;
+        border: 2px solid #332b1d;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-family: "Oxygen Mono", monospace;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+      }
+
+      button:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .measurements {
+        position: relative;
+        left: 25px;
+        top: -10px;
+      }
+
+      .current-weather {
+        margin-top: 50px;
+      }
+
+      .city-title {
+        max-width: 300px;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .temp-title {
+        font-size: 140px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+      }
+
+      .todays-info {
+        margin: 15px 0;
+      }
+
+      .side-info {
+        position: relative;
+        left: 72px;
+      }
+
+      p,
+      ul {
+        font-family: "Oxygen Mono", monospace;
+        font-size: 15px;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .week-forecast {
+        text-align: center;
+        font-family: "Inter";
+      }
+
+      .weather {
+        margin-top: 2px;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 48px;
+      }
+
+      h3 {
+        font-size: 22px;
+        margin-bottom: -18px;
+      }
+
+      span {
+        font-size: 20px;
+      }
+
+      footer {
+        position: relative;
+        bottom: -100px;
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #696d6f;
+      }
+
+      a:hover {
+        color: #ffff;
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 5px;
+        background-color: black;
+      }
+    </style>
+    <script async src="https://app2.weatherwidget.org/js/?id=ww_0cbad03a3a83a"></script>
+    <title>{% block title %}Weather App{% endblock %}</title>
+</head>
+<body class="bg-light">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    
+</body>
+</html>
