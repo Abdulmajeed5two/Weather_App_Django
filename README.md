@@ -1,0 +1,2 @@
+# Weather_App_Django
+ I developed a weather app using Django that leverages the OpenWeatherMap API. Users can input a city name, and the app fetches real-time weather data for that location. The information is then displayed on a web page, providing users with up-to-date weather conditions. This project serves as a solid foundation for further enhancements, such as adding forecasts, improving the user interface, and incorporating additional features. Keep up the great work! 🌦️🌤️
